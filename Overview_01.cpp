@@ -13,7 +13,6 @@ typedef long long int ull;
 /*
     ways to make thread:
         1. function pointer -> thread create, pass function, then all parameter related to function
-
 */
 
 void findEven(ull start, ull end, ull *EvenSum)
@@ -46,10 +45,9 @@ int main()
     ull OddSum = 0;
     ull EvenSum = 0;
 
-    auto startTime = high_resolution_clock::now();
-
-    // function pointer type thread
+    // ------function pointer type thread------
     //  WITH THREAD
+    auto startTime = high_resolution_clock::now();
     std::thread t1(findEven, start, end, &(EvenSum));
     std::thread t2(findOdd, start, end, &(OddSum));
     t1.join();
